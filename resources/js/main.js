@@ -1,22 +1,21 @@
-// This is just a sample app. You can structure your Neutralinojs app code as you wish.
-// This example app is written with vanilla JavaScript and HTML.
-// Feel free to use any frontend framework you like :)
-// See more details: https://neutralino.js.org/docs/how-to/use-a-frontend-library
+async function readGameDir(path) {
+    let gameDir = await Neutralino.filesystem.readDirectory(path);
+    let gameList = [];
 
-function showInfo() {
-    document.getElementById('info').innerHTML = `
-        ${NL_APPID} is running on port ${NL_PORT}  inside ${NL_OS}
-        <br/><br/>
-        <span>server: v${NL_VERSION} . client: v${NL_CVERSION}</span>
-        `;
+    gameDir.forEach(f => {
+        if (f.entry.endsWith('.iso') && f.type === 'FILE') {
+            gameList.push({
+                name: f.entry,
+                path: path + '/' + f.entry
+            })
+        }
+    })
+
+    return gameList;
 }
 
-function openDocs() {
-    Neutralino.os.open("https://neutralino.js.org/docs");
-}
-
-function openTutorial() {
-    Neutralino.os.open("https://www.youtube.com/watch?v=txDlNNsgSh8&list=PLvTbqpiPhQRb2xNQlwMs0uVV0IN8N-pKj");
+function getGameDir() {
+    return "C:/Users/spike/Documents"
 }
 
 function setTray() {
@@ -59,5 +58,3 @@ Neutralino.events.on("windowClose", onWindowClose);
 if(NL_OS != "Darwin") { // TODO: Fix https://github.com/neutralinojs/neutralinojs/issues/615
     setTray();
 }
-
-showInfo();

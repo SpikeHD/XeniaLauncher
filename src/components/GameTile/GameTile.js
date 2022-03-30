@@ -1,12 +1,12 @@
 import {} from 'preact'
 
-const GameTile = ({name, image}) => (
+const GameTile = ({name, path}) => (
   <div class="game-tile">
+    <div class="game-image">
+      <img src="assets/images/disc.svg" />
+    </div>
     <div class="game-title">
       {name}
-    </div>
-    <div class="game-image">
-      <img src={image} />
     </div>
   </div>
 )

@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "license": "GPL v3",
   "scripts": {
-    "dev": "preact build && neu run",
-    "build": "preact build && neu build"
+    "move_files": "cp -r ./resources/ ./build/resources",
+    "dev": "preact build --no-prerender && yarn move_files && neu run",
+    "build": "preact build --no-prerender && yarn move_files && neu build"
   },
   "dependencies": {
     "preact": "^10.3.2",
