@@ -5,7 +5,7 @@
   "port": 0,
   "documentRoot": "/build/",
   "url": "/",
-  "enableServer": true,
+  "enableServer": false,
   "enableNativeAPI": true,
   "tokenSecurity": "one-time",
   "logging": {
@@ -32,12 +32,9 @@
       "maximize": false,
       "hidden": false,
       "resizable": true,
-      "exitProcessOnClose": false
+      "exitProcessOnClose": true
     },
     "browser": {
-      "globalVariables": {
-        "TEST": "Test value browser"
-      },
       "nativeBlockList": [
         "filesystem.*"
       ]

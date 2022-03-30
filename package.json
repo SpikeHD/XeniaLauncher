@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "license": "GPL v3",
   "scripts": {
-    "prep": "preact build && mkdir build\\js && cp resources\\js\\neutralino.js build\\js\\neutralino.js",
+    "prep": "preact build",
     "dev": "npm run prep && neu run",
     "build": "npm run prep && neu build"
   },
