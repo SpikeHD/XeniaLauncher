@@ -18,6 +18,10 @@ function getGameDir() {
     return "C:/Users/spike/Documents"
 }
 
+function getXeniaPath() {
+    return "C:/Users/spike/Documents/Xenia/xenia.exe"
+}
+
 function setTray() {
     if(NL_MODE != "window") {
         console.log("INFO: Tray menu is only available in the window mode.");
