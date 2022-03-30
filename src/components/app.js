@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'preact/hooks'
 import GameList from "./GameList/GameList";
-import Button from "./Button/Button";
+import TopBar from "./TopBar"
 
 const App = () => {
 	const [games, setGames] = useState(null);
@@ -14,9 +14,7 @@ const App = () => {
 
 	return (
 		<div id = "app">
-			<Button onclick={() => {
-				console.log('Launch Xenia!')
-			}} text="Launch Xenia" />
+			<TopBar />
 			{(() => {
 				if (games) {
 					return <GameList games={games} />

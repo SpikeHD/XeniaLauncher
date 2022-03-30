@@ -3,7 +3,9 @@ async function readGameDir(path) {
     let gameList = [];
 
     gameDir.forEach(f => {
-        if (f.entry.endsWith('.iso') && f.type === 'FILE') {
+        if ((f.entry.endsWith('.iso') ||
+            f.entry.endsWith('.xiso') ||
+            f.entry.endsWith('.xex')) && f.type === 'FILE') {
             gameList.push({
                 name: f.entry,
                 path: path + '/' + f.entry
