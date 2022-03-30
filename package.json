@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "name": "xenialauncher",
+  "version": "0.0.0",
+  "license": "GPL v3",
+  "scripts": {
+    "prep": "preact build && mkdir build\\js && cp resources\\js\\neutralino.js build\\js\\neutralino.js",
+    "dev": "npm run prep && neu run",
+    "build": "npm run prep && neu build"
+  },
+  "dependencies": {
+    "preact": "^10.3.2",
+    "preact-render-to-string": "^5.1.4",
+    "preact-router": "^3.2.1"
+  }
+}
