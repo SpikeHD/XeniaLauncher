@@ -3,10 +3,10 @@ html, body {
 	width: 100%;
 	padding: 0;
 	margin: 0;
-	background: #FAFAFA;
+	background: #333;
 	font-family: 'Helvetica Neue', arial, sans-serif;
 	font-weight: 400;
-	color: #444;
+	color: white;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -17,4 +17,24 @@ html, body {
 
 #app {
 	height: 100%;
+}
+
+.game-list {
+	display: flex;
+	flex-direction: row;
+	flex-flow: wrap;
+	align-items: center;
+	justify-content: left;
+	height: 100%;
+}
+
+.game-tile {
+	border-radius: 5px;
+	background: #333;
+	color: white;
+	padding: 10px;
+	margin: 10px;
+	font-size: 12px;
+	min-width: 170px;
+	min-height: 170px;
 }

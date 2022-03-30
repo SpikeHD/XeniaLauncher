@@ -4,9 +4,8 @@
   "version": "0.0.0",
   "license": "GPL v3",
   "scripts": {
-    "prep": "preact build",
-    "dev": "npm run prep && neu run",
-    "build": "npm run prep && neu build"
+    "dev": "preact build && neu run",
+    "build": "preact build && neu build"
   },
   "dependencies": {
     "preact": "^10.3.2",

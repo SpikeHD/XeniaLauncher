@@ -1,11 +1,11 @@
 {
-  "applicationId": "js.neutralino.sample",
+  "applicationId": "js.xenia_launcher.app",
   "version": "1.0.0",
   "defaultMode": "window",
   "port": 0,
   "documentRoot": "/build/",
   "url": "/",
-  "enableServer": false,
+  "enableServer": true,
   "enableNativeAPI": true,
   "tokenSecurity": "one-time",
   "logging": {
