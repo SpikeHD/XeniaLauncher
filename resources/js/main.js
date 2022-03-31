@@ -30,6 +30,34 @@ async function getXeniaPath() {
     return await Neutralino.storage.getData('xeniaPath')
 }
 
+async function setCLIConfigOption(key, value) {
+    let config = await getCLIConfig();
+    config[key] = value;
+    Neutralino.storage.setData('cliConfig', JSON.stringify(config));
+}
+
+async function getCLIConfig() {
+    if (!(await Neutralino.storage.getData('cliConfig'))) {
+        await Neutralino.storage.setData('cliConfig', '{}');
+    }
+
+    return JSON.parse(await Neutralino.storage.getData('cliConfig'))
+}
+
+async function getCLIConfigOption(key) {
+    let data
+    
+    try{
+        data = JSON.parse((await Neutralino.storage.getData('cliConfig')))[key]
+    } catch(e) {
+        await Neutralino.storage.setData('cliConfig', '{}');
+
+        data = null
+    }
+
+    return data
+}
+
 // Opens file dialog
 async function openFile(msg) {
     let entries = await Neutralino.os.showOpenDialog(msg, {

@@ -1,6 +1,15 @@
+import { useState, useEffect } from 'preact/hooks'
 
+const Checkbox = ({ onchange, text, defaultCheck }) => {
+  const [checked, setChecked] = useState()
 
-const Checkbox = ({ onchange, text, checked }) => {
+  useEffect(() => {
+    async function check() {
+      setChecked(await defaultCheck)
+    }
+    check()
+  })
+
   return (
     <div class="checkbox">
       <input type="checkbox" onchange={onchange} checked={checked} />
