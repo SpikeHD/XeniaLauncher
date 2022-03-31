@@ -14,7 +14,8 @@ const TopBar = () => {
         console.log("Vsync: " + enabled)
       }} text="Enable VSync" checked={null} />
 
-      <FileSelect id="xeniaPath" text="Set Xenia File" />
+      <FileSelect id="xeniaPath" text="Set Xenia File" openFn={openFile} saveEntry="xeniaPath" />
+      <FileSelect id="gamePath" text="Set Game Path" openFn={openFolder} saveEntry="gamePath" />
     </div>
   )
 }

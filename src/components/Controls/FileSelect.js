@@ -1,16 +1,16 @@
 import { useState } from 'preact/hooks';
 import Button from './Button';
 
-const FileSelect = ({ id, text, onchange, path }) => {
+const FileSelect = ({ id, text, openFn, onchange, path, showPath, saveEntry }) => {
   const [file, setFile] = useState(null);
 
   const handleDialog = async () => {
-		const files = await openFile()
-    const first = files[0]
+		const file = await openFn()
 
-    setFile(first)
+    setFile(file)
     
     // TODO save file to config for future use
+    if (saveEntry) Neutralino.storage.setData(saveEntry, file)
   }
 
   return (
@@ -21,7 +21,7 @@ const FileSelect = ({ id, text, onchange, path }) => {
           <img style="display: inline-block; width: 20px; vertical-align: middle;" src="assets/images/file_folder.svg" />
         </div>
       } onclick={handleDialog} length="170px" />
-      <p class="file-path">{file}</p>
+      { showPath ? <p class="file-path">{file}</p> : null }
     </div>
   );
 }

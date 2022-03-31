@@ -16,12 +16,12 @@ async function readGameDir(path) {
     return gameList;
 }
 
-function getGameDir() {
-    return "C:/Users/spike/Documents"
+async function getGameDir() {
+    return await Neutralino.storage.getData('gamePath')
 }
 
-function getXeniaPath() {
-    return "C:/Users/spike/Documents/Xenia/xenia.exe"
+async function getXeniaPath() {
+    return await Neutralino.storage.getData('xeniaPath')
 }
 
 async function openFile(msg) {
@@ -32,6 +32,11 @@ async function openFile(msg) {
         }]
     });
     
+    return entries[0]
+}
+
+async function openFolder(msg) {
+    let entries = await Neutralino.os.showFolderDialog(msg);
     return entries
 }
 
