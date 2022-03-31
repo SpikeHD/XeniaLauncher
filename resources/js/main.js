@@ -1,7 +1,10 @@
+Neutralino.init();
+
 async function readGameDir(path) {
     let gameDir = await Neutralino.filesystem.readDirectory(path);
     let gameList = [];
 
+    // Scan for xbox files
     gameDir.forEach(f => {
         if ((f.entry.endsWith('.iso') ||
             f.entry.endsWith('.xiso') ||
@@ -16,6 +19,9 @@ async function readGameDir(path) {
     return gameList;
 }
 
+/**
+ * Data getters
+ */
 async function getGameDir() {
     return await Neutralino.storage.getData('gamePath')
 }
@@ -24,6 +30,7 @@ async function getXeniaPath() {
     return await Neutralino.storage.getData('xeniaPath')
 }
 
+// Opens file dialog
 async function openFile(msg) {
     let entries = await Neutralino.os.showOpenDialog(msg, {
         filters: [{
@@ -35,9 +42,17 @@ async function openFile(msg) {
     return entries[0]
 }
 
+// Opens folder dialog
 async function openFolder(msg) {
     let entries = await Neutralino.os.showFolderDialog(msg);
     return entries
+}
+
+// Launch a game
+async function launchGame(file = '') {
+    // TODO grab arguments from configuration
+    Neutralino.window.minimize()
+    Neutralino.os.execCommand(`${await getXeniaPath()} ${file} ${/* insert options here */ ''}`);
 }
 
 function setTray() {
@@ -56,25 +71,10 @@ function setTray() {
     Neutralino.os.setTray(tray);
 }
 
-function onTrayMenuItemClicked(event) {
-    switch(event.detail.id) {
-        case "VERSION":
-            Neutralino.os.showMessageBox("Version information",
-                `Neutralinojs server: v${NL_VERSION} | Neutralinojs client: v${NL_CVERSION}`);
-            break;
-        case "QUIT":
-            Neutralino.app.exit();
-            break;
-    }
-}
-
 function onWindowClose() {
     Neutralino.app.exit();
 }
 
-Neutralino.init();
-
-Neutralino.events.on("trayMenuItemClicked", onTrayMenuItemClicked);
 Neutralino.events.on("windowClose", onWindowClose);
 
 if(NL_OS != "Darwin") { // TODO: Fix https://github.com/neutralinojs/neutralinojs/issues/615
