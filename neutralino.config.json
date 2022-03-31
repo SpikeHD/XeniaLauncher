@@ -23,8 +23,8 @@
   "modes": {
     "window": {
       "title": "XeniaLauncher",
-      "width": 800,
-      "height": 500,
+      "width": 1000,
+      "height": 800,
       "minWidth": 400,
       "minHeight": 200,
       "fullScreen": false,
@@ -45,8 +45,8 @@
       ]
     },
     "chrome": {
-      "width": 800,
-      "height": 500,
+      "width": 1000,
+      "height": 800,
       "args": "--user-agent=\"Neutralinojs chrome mode\""
     }
   },

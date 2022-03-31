@@ -20,6 +20,10 @@ html, body {
 	height: 100%;
 }
 
+.topbar {
+	padding: 10px;
+}
+
 .button {
 	display: inline-block;
 	padding: 8px;
@@ -92,4 +96,37 @@ html, body {
 .file-path {
 	font-size: 10px;
 	display: inline;
+}
+
+.dropdown {
+	display: inline-block;
+	font-size: 12px;
+	width: 170px;
+	text-align: center;
+	word-wrap: none;
+	cursor: pointer;
+}
+
+.dropdown-selected {
+	border-bottom: 1px solid #fff;
+	display: inline;
+}
+
+.dropdown-options {
+	display: block;
+	list-style: none;
+  width: 170px;
+  position: absolute;
+	left: 340px;
+	top: 50px;
+
+  margin: 0;
+  padding: 0;
+  border: 1px solid white;
+}
+
+.dropdown-option {
+	display: block;
+	padding: 5px;
+	cursor: pointer;
 }

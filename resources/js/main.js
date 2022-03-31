@@ -48,7 +48,7 @@ async function getCLIConfigOption(key) {
     let data
     
     try{
-        data = JSON.parse((await Neutralino.storage.getData('cliConfig')))[key]
+        data = JSON.parse((await Neutralino.storage.getData('cliConfig')))[key] || null
     } catch(e) {
         await Neutralino.storage.setData('cliConfig', '{}');
 
@@ -78,9 +78,20 @@ async function openFolder(msg) {
 
 // Launch a game
 async function launchGame(file = '') {
-    // TODO grab arguments from configuration
     Neutralino.window.minimize()
-    Neutralino.os.execCommand(`${await getXeniaPath()} ${file} ${/* insert options here */ ''}`);
+
+    const cliOpts = await getCLIConfig()
+    let cliStr = ''
+
+    for (let key in cliOpts) {
+        if (cliOpts[key]) {
+            cliStr += ` --${key}=${cliOpts[key]}`
+        }
+    }
+
+    console.log(cliStr)
+
+    Neutralino.os.execCommand(`${await getXeniaPath()} ${file} ${cliStr}`);
 }
 
 function setTray() {
