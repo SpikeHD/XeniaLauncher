@@ -1,5 +1,6 @@
 import Checkbox from "./Controls/Checkbox"
 import Button from "./Controls/Button"
+import FileSelect from "./Controls/FileSelect"
 
 const TopBar = () => {
   return (
@@ -12,6 +13,8 @@ const TopBar = () => {
         const enabled = e.target.checked ? 'enabled' : 'disabled'
         console.log("Vsync: " + enabled)
       }} text="Enable VSync" checked={null} />
+
+      <FileSelect id="xeniaPath" text="Set Xenia File" />
     </div>
   )
 }

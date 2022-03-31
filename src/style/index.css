@@ -78,3 +78,8 @@ html, body {
 .game-title {
 	text-align: center;
 }
+
+.file-path {
+	font-size: 10px;
+	display: inline;
+}
