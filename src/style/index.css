@@ -72,13 +72,14 @@ html, body {
 	padding: 10px;
 	margin: 10px;
 	font-size: 12px;
-	min-width: 120px;
-	min-height: 120px;
+	width: 120px;
+	height: 120px;
 	display: flex;
 	justify-content: center;
 	flex-flow: column;
 	cursor: pointer;
 	border-radius: 5px;
+	word-wrap: break-word;
 }
 
 .game-tile:hover {
