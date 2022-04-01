@@ -1,15 +1,27 @@
+import { useState } from 'preact/hooks'
+
 import Checkbox from "./Controls/Checkbox"
 import Button from "./Controls/Button"
 import FileSelect from "./Controls/FileSelect"
 import Dropdown from "./Controls/Dropdown"
 
 const TopBar = ({ gameUpdateFn }) => {
+  const [downloading, setDownloading] = useState(false)
+
   return (
     <div class="topbar">
 
       <Button onclick={async () => {
         launchGame()
       }} text="Launch Xenia" />
+
+      <Button onclick={async () => {
+        setDownloading(true)
+        await downloadAndUpdateXenia()
+        setDownloading(false)
+      }} text={
+        <img style="width: 12px;" src={ downloading ? "assets/images/loading.svg" : "assets/images/download.svg" } />
+      } />
 
       <Checkbox onchange={(e) => {
         const enabled = e.target.checked

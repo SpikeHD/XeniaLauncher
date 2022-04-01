@@ -19,6 +19,11 @@ async function readGameDir(path) {
     return gameList;
 }
 
+// Download the latest xenia zip file and extract it
+async function downloadAndUpdateXenia() {
+    // TODO download zip and replace file in xenia path
+}
+
 /**
  * Data getters
  */
