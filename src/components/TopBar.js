@@ -13,14 +13,6 @@ const TopBar = ({ gameUpdateFn }) => {
         launchGame()
       }} text="Launch Xenia" />
 
-      {/* <Button onclick={async () => {
-        setDownloading(true)
-        await downloadAndUpdateXenia()
-        setDownloading(false)
-      }} text={
-        <img style="width: 12px;" src={ downloading ? "assets/images/loading.svg" : "assets/images/download.svg" } />
-      } /> */}
-
       <a style="padding-right: 12px" href="https://github.com/xenia-project/release-builds-windows/releases/latest/download/xenia_master.zip">
         <img style="width: 16px;" src="assets/images/download.svg" />
       </a>
