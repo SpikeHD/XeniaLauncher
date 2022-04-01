@@ -14,10 +14,10 @@
 
 # Other build stuff
 build/
+temp/
 .tmp/
-
-resources/
 
 size-plugin.json
 
 node_modules/
+resources/

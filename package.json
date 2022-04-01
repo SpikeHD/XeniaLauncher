@@ -7,7 +7,7 @@
     "setup": "neu update && cp -r ./neutralino/* ./resources/",
     "move_files": "cp -r ./build/* ./resources/",
     "dev": "preact build --no-prerender && yarn move_files && neu run",
-    "build": "preact build --no-prerender && yarn move_files && rm -rf ./dist/* && neu build"
+    "build": "preact build --no-prerender && yarn move_files && rm -rf ./dist/* && neu build --release"
   },
   "dependencies": {
     "preact": "^10.3.2",
