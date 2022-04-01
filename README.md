@@ -22,8 +22,8 @@ That's it!
 
 # Future Plans
 
-* Auto-update Xenia
-* Recursively find ISO/XISO/XEX files in nested folders in the game folder
+* ~~Auto-update Xenia~~ (kinda implemented, manual download button)
+* ~~Recursively find ISO/XISO/XEX files in nested folders in the game folder~~
 * Detect/find icons for games to display rather than a blank disc image
 * UI changes to make it a lil nicer
 * Display current paths to Xenia/Game folder in the buttons or on hover or something
