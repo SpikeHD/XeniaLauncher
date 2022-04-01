@@ -21,3 +21,7 @@ That's it!
 # Contributing
 
 Issues, PRs, etc. are all welcome!
+
+# Disclaimer
+
+Probably shouldn't have to be mentioned, but just in case, this project in no way encourages or supports piracy. Dump your own games, only possess copies of games you own, etc.
