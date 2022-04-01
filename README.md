@@ -4,6 +4,8 @@ Simple launcher UI for configuring and launching Xenia and Xbox games through Xe
 
 [Download here!](https://github.com/SpikeHD/XeniaLauncher/releases)
 
+Once downloaded, just extract everything into it's own folder and, once launched, set your xenia binary and game paths.
+
 ![image](https://user-images.githubusercontent.com/25207995/161187711-df484f6a-fade-4acf-8f24-fa1ff2681986.png)
 
 # Setup
