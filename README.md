@@ -20,6 +20,14 @@ Once downloaded, just extract everything into it's own folder and, once launched
 
 That's it!
 
+# Future Plans
+
+* Auto-update Xenia
+* Recursively find ISO/XISO/XEX files in nested folders in the game folder
+* Detect/find icons for games to display rather than a blank disc image
+* UI changes to make it a lil nicer
+* Display current paths to Xenia/Game folder in the buttons or on hover or something
+
 # Contributing
 
 Issues, PRs, etc. are all welcome!
