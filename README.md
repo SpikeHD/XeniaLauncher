@@ -1,19 +1,23 @@
 # Xenia Launcher
 
-UI for configuring and launching Xenia
+Simple launcher UI for configuring and launching Xenia and Xbox games through Xenia.
+
+[Download here!](https://github.com/SpikeHD/XeniaLauncher/releases)
+
+![image](https://user-images.githubusercontent.com/25207995/161187711-df484f6a-fade-4acf-8f24-fa1ff2681986.png)
 
 # Setup
 
-0. Clone the repository:
- ```sh
- git clone git@github.com:SpikeHD/XeniaLauncher.git
- ```
-1. Install `neu`:
- ```sh
- npm install -g @neutralinojs/neu
- ```
-2. Run `neu update` to download the Neutralino binaries
-3. Run `npm install` or `yarn install` to install dependancies
-4. To setup some of the project directories, run `npm run setup` or `yarn setup`
-5. To start the project in dev mode, run `npm run dev`
-6. To package the project, run `npm run build`
+1. Clone the repository: `git clone git@github.com:SpikeHD/XeniaLauncher.git`
+2. Install the `neu` CLI tool: `npm install -g @neutralinojs/neu`
+3. Run `npm run setup`
+    - This will download Neutralino binaries and do a little bit of setup for you
+4. Run `npm install` to install dependancies, including `preact-cli` which is used to build the Preact portion
+5. To compile and test everything, run `npm run dev`
+6. To compile a build for release, run `npm run build`
+
+That's it!
+
+# Contributing
+
+Issues, PRs, etc. are all welcome!
