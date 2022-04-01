@@ -89,8 +89,6 @@ async function launchGame(file = '') {
         }
     }
 
-    console.log(cliStr)
-
     Neutralino.os.execCommand(`${await getXeniaPath()} ${file} ${cliStr}`);
 }
 
