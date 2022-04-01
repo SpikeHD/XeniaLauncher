@@ -22,6 +22,13 @@ async function readGameDir(path) {
 // Download the latest xenia zip file and extract it
 async function downloadAndUpdateXenia() {
     // TODO download zip and replace file in xenia path
+    let zip = await fetch('https://github.com/xenia-project/release-builds-windows/releases/latest/download/xenia_master.zip', {
+        method: 'GET',
+    })
+
+    let blob = await zip.blob()
+
+    console.log(blob)
 }
 
 /**
