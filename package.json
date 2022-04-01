@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "license": "GPL v3",
   "scripts": {
-    "move_files": "cp -r ./resources/ ./build/resources",
+    "setup": "neu update && cp -r ./neutralino/* ./resources/",
+    "move_files": "cp -r ./build/* ./resources/",
     "dev": "preact build --no-prerender && yarn move_files && neu run",
     "build": "preact build --no-prerender && yarn move_files && neu build"
   },

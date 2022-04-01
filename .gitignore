@@ -16,6 +16,8 @@
 build/
 .tmp/
 
+resources/
+
 size-plugin.json
 
 node_modules/
