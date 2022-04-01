@@ -6,8 +6,10 @@ const App = () => {
 	const [games, setGames] = useState(null);
 
 	async function getGames() {
-		setGames(null)
-		setGames(await readGameDir(await getGameDir()))
+		const dir = await getGameDir()
+		const files = await readGameDir(dir)
+
+		setGames(files)
 	}
 
 	useEffect(() => {
@@ -17,7 +19,7 @@ const App = () => {
 	return (
 		<div id = "app">
 			<TopBar gameUpdateFn={getGames} />
-			{ games ? <GameList games={games} /> : null }
+			{ games?.length > 0 ? <GameList games={games} /> : null }
 		</div>
 	)
 }

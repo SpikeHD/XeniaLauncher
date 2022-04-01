@@ -1,20 +1,24 @@
 Neutralino.init();
 
-async function readGameDir(path) {
+async function readGameDir(path, level = 0) {
     let gameDir = await Neutralino.filesystem.readDirectory(path);
     let gameList = [];
 
     // Scan for xbox files
-    gameDir.forEach(f => {
+    for (const f of gameDir) {
         if ((f.entry.endsWith('.iso') ||
-            f.entry.endsWith('.xiso') ||
-            f.entry.endsWith('.xex')) && f.type === 'FILE') {
+                f.entry.endsWith('.xiso') ||
+                f.entry.endsWith('.xex')) && f.type === 'FILE') {
             gameList.push({
                 name: f.entry,
                 path: path + '/' + f.entry
             })
         }
-    })
+
+        if (f.type === 'DIRECTORY' && (f.entry !== '.' && f.entry !== '..') && level < 3) {
+            gameList = gameList.concat(await readGameDir(path + '\\' + f.entry, level + 1))
+        }
+    }
 
     return gameList;
 }

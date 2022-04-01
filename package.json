@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "xenialauncher",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "GPL v3",
   "scripts": {
     "setup": "neu update && cp -r ./neutralino/* ./resources/",

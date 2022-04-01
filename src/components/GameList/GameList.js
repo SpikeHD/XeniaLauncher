@@ -1,8 +1,6 @@
 import GameTile from '../GameTile/GameTile.js'
 
 const GameList = ({ games }) => {
-  
-
   return (
     <div class="game-list">
       {games.map(game => (
