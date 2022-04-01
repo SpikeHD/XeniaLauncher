@@ -3,7 +3,7 @@ import Button from "./Controls/Button"
 import FileSelect from "./Controls/FileSelect"
 import Dropdown from "./Controls/Dropdown"
 
-const TopBar = () => {
+const TopBar = ({ gameUpdateFn }) => {
   return (
     <div class="topbar">
 
@@ -39,7 +39,7 @@ const TopBar = () => {
       }]} defaultOption={getCLIConfigOption('gpu')} />
 
       <FileSelect id="xeniaPath" text="Set Xenia File" openFn={openFile} saveEntry="xeniaPath" />
-      <FileSelect id="gamePath" text="Set Game Path" openFn={openFolder} saveEntry="gamePath" />
+      <FileSelect id="gamePath" text="Set Game Path" openFn={openFolder} saveEntry="gamePath" onSave={gameUpdateFn} />
 
     </div>
   )

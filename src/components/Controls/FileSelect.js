@@ -1,16 +1,20 @@
 import { useState } from 'preact/hooks';
 import Button from './Button';
 
-const FileSelect = ({ id, text, openFn, onchange, path, showPath, saveEntry }) => {
+const FileSelect = ({ id, text, openFn, path, showPath, saveEntry, onSave }) => {
   const [file, setFile] = useState(null);
 
   const handleDialog = async () => {
 		const file = await openFn()
 
     setFile(file)
-    
-    // TODO save file to config for future use
-    if (saveEntry) Neutralino.storage.setData(saveEntry, file)
+
+    if (saveEntry) {
+      Neutralino.storage.setData(saveEntry, file)
+
+      // If we have an action to do once we save the path
+      if (onSave) await onSave()
+    }
   }
 
   return (

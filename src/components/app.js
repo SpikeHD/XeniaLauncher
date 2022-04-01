@@ -4,22 +4,20 @@ import TopBar from "./TopBar"
 
 const App = () => {
 	const [games, setGames] = useState(null);
-	
+
+	async function getGames() {
+		setGames(null)
+		setGames(await readGameDir(await getGameDir()))
+	}
+
 	useEffect(() => {
-		async function getGames() {
-			setGames(await readGameDir(await getGameDir()))
-		}
 		getGames()
 	}, [])
 
 	return (
 		<div id = "app">
-			<TopBar />
-			{(() => {
-				if (games) {
-					return <GameList games={games} />
-				}
-			})()}
+			<TopBar gameUpdateFn={getGames} />
+			{ games ? <GameList games={games} /> : null }
 		</div>
 	)
 }
