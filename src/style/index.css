@@ -63,6 +63,7 @@ html, body {
 	justify-content: left;
 	height: 80%;
 	align-content: flex-start;
+	align-items: flex-start;
 }
 
 .game-tile {
@@ -73,7 +74,7 @@ html, body {
 	margin: 10px;
 	font-size: 12px;
 	width: 120px;
-	height: 120px;
+	min-height: 120px;
 	display: flex;
 	justify-content: center;
 	flex-flow: column;
