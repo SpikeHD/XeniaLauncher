@@ -4,6 +4,8 @@ Simple launcher UI for configuring and launching Xenia and Xbox games through Xe
 
 [Download here!](https://github.com/SpikeHD/XeniaLauncher/releases)
 
+Once downloaded, just extract everything into it's own folder and, once launched, set your xenia binary and game paths.
+
 ![image](https://user-images.githubusercontent.com/25207995/161187711-df484f6a-fade-4acf-8f24-fa1ff2681986.png)
 
 # Setup
@@ -17,6 +19,14 @@ Simple launcher UI for configuring and launching Xenia and Xbox games through Xe
 6. To compile a build for release, run `npm run build`
 
 That's it!
+
+# Future Plans
+
+* Auto-update Xenia
+* Recursively find ISO/XISO/XEX files in nested folders in the game folder
+* Detect/find icons for games to display rather than a blank disc image
+* UI changes to make it a lil nicer
+* Display current paths to Xenia/Game folder in the buttons or on hover or something
 
 # Contributing
 
